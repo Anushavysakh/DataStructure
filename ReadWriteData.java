@@ -1,4 +1,4 @@
-package com.orderedlinkedlist.bridgelabz;
+package com.unorderedlist.bridgelabz;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class ReadWriteData {
 
-	static String filePath = "D:\\\\class\\\\data.txt";
+	static String filePath = "D:\\class\\data.txt";
 
     public static ArrayList<String> readFile() {
         ArrayList<String> dataArray = new ArrayList<>();
@@ -20,7 +20,7 @@ public class ReadWriteData {
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()){
                 data = myReader.nextLine().replaceAll(",", data);
-                String[] data1 = data.trim().split("\\s+");
+                String[] data1 = data.split("\\W+");
                 for(String s: data1)
                     dataArray.add(s);
             }
@@ -38,3 +38,4 @@ public class ReadWriteData {
         fw.flush();
     }
 }
+

@@ -1,17 +1,16 @@
-package com.orderedlinkedlist.bridgelabz;
+package com.unorderedlist.bridgelabz;
 
 import java.util.ArrayList;
 
 public class LinkedList<T extends Comparable<T>> {
-   
+
 	T[] elements;
-    Node head;
-
-    public LinkedList(T[] elements) {
-        this.elements = elements;
-    }
-
-    public void insertBefore() {
+	Node head;
+	
+	public LinkedList(T[] elements) {
+	        this.elements = elements;
+	}
+	public void insertBefore() {
         T data;
         data = elements[0];
 
@@ -54,20 +53,12 @@ public class LinkedList<T extends Comparable<T>> {
         Node temp = head;
         ArrayList<T> data = new ArrayList<>();
         while(temp != null) {
-            System.out.print(temp.data + " ");
+            System.out.print(temp.data + "\n");
             data.add((T) temp.data);
             temp = temp.next;
         }
         return data;
     }
-    public void display1() {
-        Node temp = head;
-        while(temp != null) {
-            System.out.print(temp.data + " ");
-            temp = temp.next;
-        }
-    }
-
 
     public boolean search(T value) {
         for(int i = 0; i < elements.length; i++) {
@@ -94,7 +85,7 @@ public class LinkedList<T extends Comparable<T>> {
             head = temp.next;
         }
 
-        for(int i = 0; temp != null && i < position; i++)
+        for(int i = 0; temp != null && i < position; i++) // 1 < 1
             temp = temp.next;
 
         if(temp == null || temp.next == null)
@@ -118,25 +109,4 @@ public class LinkedList<T extends Comparable<T>> {
         }
     }
 
-    public void sortList() {
-        Node current = head, index = null;
-        String temp;
-        if (head == null) {
-            return;
-        }
-        else {
-            while (current != null) {
-                index = current.next;
-                while (index != null) {
-                    if ((Integer.parseInt(index.data)) < (Integer.parseInt(current.data))){
-                        temp = current.data;
-                        current.data = index.data;
-                        index.data = temp;
-                    }
-                    index = index.next;
-                }
-                current = current.next;
-            }
-        }
-    }
 }
